@@ -1,0 +1,33 @@
+---
+title: "practice"
+author: "Parker Mas"
+date: "10/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r}
+ library(googlesheets4)
+ sheets_deauth()
+ x <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg")
+```
+
+```{r}
+
+```
+
+```{r}
+cold_call <- function(){}
+     sheets_deauth()
+     x <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg") %>%
+       select(Student) %>%
+     sample_n(size = 1) %>%
+       pull(Student)
+}
+
+```
+
