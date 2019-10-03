@@ -1,0 +1,29 @@
+---
+title: "bead_exercise"
+author: "Parker Mas"
+date: "10/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(googlesheets4)
+library(tidyverse)
+```
+
+```{r}
+sheets_deauth()
+clean_data <- read_sheet("1cgP-e6THVfiW5TJ95QhX3jkNxKvc8Sicp9k_BkSRd2I")
+clean_data <- na.omit(clean_data) %>%
+mutate(prop = red / (red + white))
+
+
+  ggplot(clean_data, aes(x = prop)) +
+  geom_histogram() +
+    labs(x = "Proportion of Red Beads",
+         y = "Count",
+         title = "Proportion of Red Beads in Sample of Size 25",
+         subtitle = "Problem with one Outlier?")
+
+```
+
